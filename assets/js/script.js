@@ -7,6 +7,7 @@ let headsAbsCount = document.getElementById("heads");
 let headsPerCount = document.getElementById("heads-percent");
 let tailsAbsCount = document.getElementById("tails");
 let tailsPerCount = document.getElementById("tails-percent");
+
 let headsAbs = 0;
 let headsPer = 0;
 let tailsAbs = 0;
@@ -38,6 +39,18 @@ flipButton.addEventListener('click', function() {
         headsPerCount.textContent = `${headsPer}\%`;
         tailsPerCount.textContent = `${tailsPer}\%`;
     }
+})
+
+clearButton.addEventListener('click', function() {
+    let headsAbs = 0;
+    let headsPer = 0;
+    let tailsAbs = 0;
+    let tailsPer = 0;
+    let flipNum = 0;
+    headsAbsCount.textContent = headsAbs;
+    tailsAbsCount.textContent = tailsAbs;
+    headsPerCount.textContent = `${headsPer}\%`;
+    tailsPerCount.textContent = `${tailsPer}\%`;
 })
 
 
