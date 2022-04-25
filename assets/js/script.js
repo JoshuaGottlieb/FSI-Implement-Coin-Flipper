@@ -6,6 +6,7 @@ let headsAbsCount = document.getElementById("heads");
 let headsPerCount = document.getElementById("heads-percent");
 let tailsAbsCount = document.getElementById("tails");
 let tailsPerCount = document.getElementById("tails-percent");
+let message = document.getElementById("message");
 
 // Declaring calculation-based variables.
 let headsAbs = 0;
@@ -24,7 +25,7 @@ flipButton.addEventListener('click', function() {
 
     // If roll is 0, result is heads. If roll is 1, result is tails.
     // Steps: Update the image source, increment number of heads/tails rolled, update heads/tails percentage,
-    //          update attributes of DOM objects
+    //          update attributes of DOM objects.
     if(flipResult === 0) {
         pennyState.src = "./assets/images/penny-heads.jpg";
         headsAbs++;
@@ -34,6 +35,7 @@ flipButton.addEventListener('click', function() {
         headsAbsCount.textContent = headsAbs;
         headsPerCount.textContent = `${headsPer}\%`;
         tailsPerCount.textContent = `${tailsPer}\%`;
+        message.textContent = "You flipped heads!";
     }
     else{
         pennyState.src = "./assets/images/penny-tails.jpg";
@@ -44,10 +46,12 @@ flipButton.addEventListener('click', function() {
         tailsAbsCount.textContent = tailsAbs;
         headsPerCount.textContent = `${headsPer}\%`;
         tailsPerCount.textContent = `${tailsPer}\%`;
+        message.textContent = "You flipped tails!";
     }
 })
 
-// Clears the scoreboard. Resets all calculation variables to 0, resets immage to heads, resets scoreboard DOM objects.
+// Clears the scoreboard. Resets all calculation variables to 0, resets image to heads, 
+//  resets scoreboard DOM objects and display text.
 clearButton.addEventListener('click', function() {
     let headsAbs = 0;
     let headsPer = 0;
@@ -59,4 +63,5 @@ clearButton.addEventListener('click', function() {
     tailsAbsCount.textContent = tailsAbs;
     headsPerCount.textContent = `${headsPer}\%`;
     tailsPerCount.textContent = `${tailsPer}\%`;
+    message.textContent = "Let's Get Rolling!";
 })
