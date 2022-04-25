@@ -1,5 +1,4 @@
-// TODO: Declare any global variables we need
-
+// Declaring variables that reference DOM objects.
 let pennyState = document.getElementById("penny-image");
 let flipButton = document.getElementById("flip");
 let clearButton = document.getElementById("clear");
@@ -8,17 +7,24 @@ let headsPerCount = document.getElementById("heads-percent");
 let tailsAbsCount = document.getElementById("tails");
 let tailsPerCount = document.getElementById("tails-percent");
 
+// Declaring calculation-based variables.
 let headsAbs = 0;
 let headsPer = 0;
 let tailsAbs = 0;
 let tailsPer = 0;
 let flipNum = 0;
 
-    // TODO: Add event listener and handler for flip and clear buttons
+// Flips the penny and updates the DOM with appropriate information.
 flipButton.addEventListener('click', function() {
+    // Increments number of flips
     flipNum++;
+
+    // Rolls between 0 and 1
     let flipResult = Math.floor(Math.random() * 2);
 
+    // If roll is 0, result is heads. If roll is 1, result is tails.
+    // Steps: Update the image source, increment number of heads/tails rolled, update heads/tails percentage,
+    //          update attributes of DOM objects
     if(flipResult === 0) {
         pennyState.src = "./assets/images/penny-heads.jpg";
         headsAbs++;
@@ -41,31 +47,16 @@ flipButton.addEventListener('click', function() {
     }
 })
 
+// Clears the scoreboard. Resets all calculation variables to 0, resets immage to heads, resets scoreboard DOM objects.
 clearButton.addEventListener('click', function() {
     let headsAbs = 0;
     let headsPer = 0;
     let tailsAbs = 0;
     let tailsPer = 0;
     let flipNum = 0;
+    pennyState.src = "./assets/images/penny-heads.jpg";
     headsAbsCount.textContent = headsAbs;
     tailsAbsCount.textContent = tailsAbs;
     headsPerCount.textContent = `${headsPer}\%`;
     tailsPerCount.textContent = `${tailsPer}\%`;
 })
-
-
-    // Flip Button Click Handler
-        // TODO: Determine flip outcome
-        // TODO: Update image and status message in the DOM
-
-        // Update the scorboard
-        // TODO: Calculate the total number of rolls/flips
-        // Make variables to track the percentages of heads and tails
-        // TODO: Use the calculated total to calculate the percentages
-        // HINT: Make sure not to divide by 0! (if total is 0, percent will be 0 as well)
-        // TODO: Update the display of each table cell
-
-
-    // Clear Button Click Handler
-        // TODO: Reset global variables to 0
-        // TODO: Update the scoreboard (same logic as in flip button click handler)
