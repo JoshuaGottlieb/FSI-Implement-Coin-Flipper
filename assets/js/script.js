@@ -53,11 +53,11 @@ flipButton.addEventListener('click', function() {
 // Clears the scoreboard. Resets all calculation variables to 0, resets image to heads, 
 //  resets scoreboard DOM objects and display text.
 clearButton.addEventListener('click', function() {
-    let headsAbs = 0;
-    let headsPer = 0;
-    let tailsAbs = 0;
-    let tailsPer = 0;
-    let flipNum = 0;
+    headsAbs = 0;
+    headsPer = 0;
+    tailsAbs = 0;
+    tailsPer = 0;
+    flipNum = 0;
     pennyState.src = "./assets/images/penny-heads.jpg";
     headsAbsCount.textContent = headsAbs;
     tailsAbsCount.textContent = tailsAbs;
